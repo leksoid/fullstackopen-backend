@@ -10,7 +10,8 @@
     "build:ui": "rm -rf build && cd ../../../fullstackopen/part2/phonebook && npm run build --prod && cp -r build ../../../backend/part3/phonebook-server/",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/leksoid/fullstackopen-backend#readme",
   "devDependencies": {
+    "eslint": "^7.16.0",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
+    "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0"
   }
 }
